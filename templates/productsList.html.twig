@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}List of Products{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+{% block body %}
+{% for product in products %}
+    <details>
+        <summary>{{ product.productName }}  <a href="/delete/{{ product.id }}">delete</a> <a href="/editProduct/{{ product.id }}">Edit</a></summary>
+        <p>{{ product.productDescription }}</p>
+    </details>
+{% endfor %}
+
+<button onclick='location.replace("/addingNewProduct")'>Add Product</button>
+</body>
+
+{% endblock %}
+{% block javascripts %}{% endblock %}
+</body>
+</html>
+

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Edit Product{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+{% block body %}
+    <form action="/update" method="post">
+        <input value="{{ product.id }}" hidden name="id">
+        <p> Product Name: <input id="productName" value="{{ product.productName }}" name="productName" type="text"/>
+        </p>
+        <p> Product Description: <textarea id="productDescription"
+                                           name="productDescription">{{ product.productDescription }}</textarea></p>
+        <input type="submit" value="SUBMIT"/>
+
+    </form>
+{% endblock %}
+{% block javascripts %}{% endblock %}
+</body>
+</html>
